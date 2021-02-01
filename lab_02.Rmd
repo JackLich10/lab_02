@@ -1,7 +1,7 @@
 ---
 title: "Lab 02"
-author: ""
-date: ""
+author: "Jack Lichtenstein"
+date: "2/1/21"
 output: 
   html_document:
     toc: true
@@ -44,6 +44,8 @@ need to set the class attribute to `"POSIXct"`
 
 ```{r}
 z <- seq(0, 3600 * 10, by = 3600)
+
+attr(z, which = "class") <- "POSIXct"
 ```
 
 What do you notice about the date-time? If you are unsure, check out
@@ -66,11 +68,27 @@ Complete the following without using any loops.
 
 1. Subset only the letters from `x`.
 
+```{r}
+x[which(!is.na(as.numeric(x)))]
+```
+
 2. Subset only the negative numbers from `x`.
+
+```{r}
+x[intersect(which(!is.na(as.numeric(x))), grep("-", x))]
+```
 
 3. Select the numbers divisible by 3 from `x`.
 
+```{r}
+x[which(as.numeric(x) %% 3 == 0)]
+```
+
 4. Remove all values with an even index from `x`.
+
+```{r}
+x[-c(seq(2, 50, by = 2))]
+```
 
 
 
