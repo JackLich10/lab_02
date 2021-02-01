@@ -69,7 +69,7 @@ Complete the following without using any loops.
 1. Subset only the letters from `x`.
 
 ```{r}
-x[which(!is.na(as.numeric(x)))]
+x[which(is.na(as.numeric(x)))]
 ```
 
 2. Subset only the negative numbers from `x`.
